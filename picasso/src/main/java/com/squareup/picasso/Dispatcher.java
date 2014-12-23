@@ -360,7 +360,7 @@ class Dispatcher {
   }
 
   void performComplete(BitmapHunter hunter) {
-    if (!hunter.shouldSkipMemoryCache()) {
+    if (hunter.shouldStoreInMemoryCache()) {
       cache.set(hunter.getKey(), hunter.getResult());
     }
     hunterMap.remove(hunter.getKey());
